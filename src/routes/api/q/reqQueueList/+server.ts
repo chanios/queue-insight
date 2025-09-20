@@ -12,6 +12,9 @@ const _involk = async (boardToken: string, limit: number) => {
 export async function POST({ request }) {
   const data = await request.json();
   return new Response(await _involk(data.boardToken, data.limit), {
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
   });
 }
