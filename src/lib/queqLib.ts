@@ -75,9 +75,7 @@ export interface BoardQueueOldestWaitList {
 }
 const originalFetch = fetch;
 const ofetch = (url: string, options: RequestInit) => {
-  if (!browser) {
-    url = `http://localhost:3000${url}`;
-  }
+  url = `https://queue-insight.vercel.app${url}`;
   return originalFetch(url, options);
 };
 class QueqClient {
